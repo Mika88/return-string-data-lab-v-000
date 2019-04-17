@@ -15,7 +15,6 @@ $(function () {
     });
 
     $.get("/products/" + id + "/inventory", function(data) {
-      debugger;
       if (data == "true") {
         $("#des-" + id).append( "Available");
       } else {
