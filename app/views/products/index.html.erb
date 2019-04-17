@@ -13,7 +13,11 @@ $(function () {
       $("#des-" + id).text(data);
     });
     $.get("/products/" + id + "/inventory", function(data) {
-      debugger;
+      if (data == true) {
+        return "Available"
+      } else {
+        return "Sold Out"
+      }
     });
   });
 });
