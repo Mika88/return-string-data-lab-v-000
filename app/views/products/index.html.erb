@@ -1,6 +1,6 @@
-<ul class = "info">
+<ul>
 <% @products.each do |product| %>
-  <li><%= product.name %></li><br>
+  <li class = "info"><%= product.name %></li><br>
     <div id="des-<%= product.id %>"><%= truncate product.description %></div>
     <button class="js-more" data-id="<%= product.id %>">More Info</button>
 <% end %>
@@ -15,9 +15,9 @@ $(function () {
     });
     $.get("/products/" + id + "/inventory", function(data) {
       if (data == true) {
-        $("#des").append( "Available");
+        $(".info").append( "Available");
       } else {
-        $("#des").append( "Sold Out");
+        $(".info").append( "Sold Out");
       }
     });
   });
