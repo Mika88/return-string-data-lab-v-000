@@ -13,6 +13,7 @@ $(function () {
     $.get("/products/" + id + "/description", function(data) {
       $("#des-" + id).text(data);
     });
+    
     $.get("/products/" + id + "/inventory", function(data) {
       if (data == true) {
         $(".info").append( "Available");
