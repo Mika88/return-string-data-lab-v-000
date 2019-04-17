@@ -13,11 +13,11 @@ $(function () {
     $.get("/products/" + id + "/description", function(description) {
       $.get("/products/" + id + "/inventory", function(inventory) {
         if (inventory == "true") {
-          $("#des-" + id).append( "<br /> Available");
+          inventory = "Available";
         } else {
-          $("#des-" + id).append( "<br /> Sold Out");
+          inventory = "Sold Out";
         }
-      $("#des-" + id).text(description);
+      $("#des-" + id).text(description + inventory);
     });
   });
 });
