@@ -25,10 +25,12 @@ class ProductsController < ApplicationController
   end
 
   def inventory
-    if set_product.inventory > 0
-      render plain: true
-    else
-      render plain: false
+    if set_product
+      if set_product.inventory > 0
+        render plain: true
+      else
+        render plain: false
+      end
     end
   end
 
