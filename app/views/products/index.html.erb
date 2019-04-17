@@ -10,16 +10,14 @@
 $(function () {
   $(".js-more").on('click', function() {
     let id = $(this).data("id");
-    $.get("/products/" + id + "/description", function(data) {
-      $("#des-" + id).text(data);
-    });
-
-    $.get("/products/" + id + "/inventory", function(data) {
-      if (data == "true") {
-        $("#des-" + id).append( "<br /> Available");
-      } else {
-        $("#des-" + id).append( "<br /> Sold Out");
-      }
+    $.get("/products/" + id + "/description", function(description) {
+      $.get("/products/" + id + "/inventory", function(inventory) {
+        if (inventory == "true") {
+          $("#des-" + id).append( "<br /> Available");
+        } else {
+          $("#des-" + id).append( "<br /> Sold Out");
+        }
+      $("#des-" + id).text(description);
     });
   });
 });
