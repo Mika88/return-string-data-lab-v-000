@@ -1,6 +1,6 @@
 <ul>
 <% @products.each do |product| %>
-  <li class = "info"><%= product.name %></li><br>
+  <li><%= product.name %></li><br>
     <div id="des-<%= product.id %>"><%= truncate product.description %></div>
     <button class="js-more" data-id="<%= product.id %>">More Info</button>
 <% end %>
