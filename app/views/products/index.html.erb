@@ -1,9 +1,10 @@
-<ul>
+<ul class = "info">
 <% @products.each do |product| %>
   <li><%= product.name %></li><br>
     <div id="des-<%= product.id %>"><%= truncate product.description %></div>
     <button class="js-more" data-id="<%= product.id %>">More Info</button>
 <% end %>
+</ul>
 
 <script type="text/javascript" charset="utf-8">
 $(function () {
