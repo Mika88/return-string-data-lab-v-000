@@ -16,9 +16,9 @@ $(function () {
 
     $.get("/products/" + id + "/inventory", function(data) {
       if (data == "true") {
-        $("#des-" + id).append( "Available");
+        $("#des-" + id).append( "<br /> Available");
       } else {
-        $("#des-" + id).append( "Sold Out");
+        $("#des-" + id).append( "<br /> Sold Out");
       }
     });
   });
